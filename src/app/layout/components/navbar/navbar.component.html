@@ -1,3 +1,107 @@
-<p>
-  navbar works!
-</p>
+<header>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-md fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-inline-block" href="javascript:">
+        <img width="60%" src="assets/pictures/logo.png" alt="Logo" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarCollapse"
+        aria-controls="navbarCollapse"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link d-block" href="javascript:">{{
+              'home' | translate
+            }}</a>
+          </li>
+          <li
+            ngbDropdown
+            placement="bottom"
+            #myDrop="ngbDropdown"
+            class="nav-item"
+          >
+            <a
+              class="nav-link"
+              id="dropdownBasic1"
+              href="javascript:"
+              ngbDropdownAnchor
+              (mouseenter)="myDrop.open()"
+              >{{ 'aboutUs' | translate }}</a
+            >
+
+            <div
+              class="custom-grey-bg"
+              [ngClass]="{ 'right-dir': locale === 'ar' }"
+              ngbDropdownMenu
+              (mouseleave)="myDrop.close()"
+              aria-labelledby="dropdownBasic1"
+            >
+              <button ngbDropdownItem>{{ 'ourCompany' | translate }}</button>
+              <div class="dropdown-divider"></div>
+              <button ngbDropdownItem>
+                {{ 'partners&Acreditations' | translate }}
+              </button>
+              <div class="dropdown-divider"></div>
+              <button ngbDropdownItem>
+                {{ 'corporateStructure' | translate }}
+              </button>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:">{{
+              'businessUnits' | translate
+            }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:">{{
+              'projects' | translate
+            }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:">{{
+              'partners' | translate
+            }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:">{{
+              'media&Events' | translate
+            }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:">{{
+              'contacts' | translate
+            }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:">{{
+              'careers' | translate
+            }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:"
+              ><fa-icon [icon]="searchIcon" size="lg"></fa-icon
+            ></a>
+          </li>
+          <li class="nav-item" [ngClass]="{ 'text-right': locale === 'ar' }">
+            <a (click)="changeLang()" class="nav-link" href="javascript:">
+              <img
+                width="10%"
+                [src]="locale === 'ar' ? egFlag : ukFlag"
+                alt="lang"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

@@ -1,3 +1,54 @@
-<p>
-  footer works!
-</p>
+<footer class="footer bg-dark mt-auto py-4">
+  <div class="container">
+    <h3>{{ 'exploreMore' | translate }}</h3>
+    <hr style="width: 80%" />
+    <div class="row">
+      <div class="col-md-3 col-sm-12">
+        <h4>{{ 'quickLinks' | translate }}</h4>
+        <ul class="list-style-none">
+          <p>{{ 'home' | translate }}</p>
+          <p>{{ 'aboutUs' | translate }}</p>
+          <p>{{ 'careers' | translate }}</p>
+          <p>{{ 'events' | translate }}</p>
+          <p>{{ 'news' | translate }}</p>
+          <p>{{ 'contact' | translate }}</p>
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-12">
+        <h4>{{ 'ourHospitals' | translate }}</h4>
+        <ul class="list-style-none">
+          <p>{{ 'alShalalat' | translate }}</p>
+          <p>{{ 'semouha' | translate }}</p>
+          <p>{{ 'antoniades' | translate }}</p>
+          <p>{{ 'maadi' | translate }}</p>
+          <p>{{ 'haiElJamaa' | translate }}</p>
+        </ul>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <h4>{{ 'newsLetter' | translate }}</h4>
+        <div class="input-group mb-5">
+          <input
+            type="email"
+            class="form-control"
+            [placeholder]="'emailAddress' | translate"
+            aria-label="Email Address"
+            aria-describedby="subscription email address"
+          />
+          <div class="input-group-append">
+            <button class="btn sub-btn">
+              {{ 'subscribeNow' | translate }}
+            </button>
+          </div>
+        </div>
+        <p class="text-muted mt-5">
+          {{ 'copyRights' | translate: { value: '&copy;' } }}
+        </p>
+        <div class="social">
+          <fa-icon [icon]="fbIcon"></fa-icon>
+          <fa-icon [icon]="twitterIcon"></fa-icon>
+          <fa-icon [icon]="googlePlusIcon"></fa-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

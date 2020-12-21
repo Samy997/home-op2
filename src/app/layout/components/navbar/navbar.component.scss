@@ -1,0 +1,47 @@
+$grey-bg: #f6f6f6;
+$nav-item-hover-color: #e26f5f;
+
+.navbar {
+  max-height: 9vh;
+  padding: 0;
+
+  &-collapse {
+    align-self: flex-start;
+  }
+}
+
+.nav-item {
+  padding: 0.5rem 0;
+  min-width: fit-content;
+
+  &:focus,
+  & > .nav-link {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: unset;
+
+    a {
+      color: $nav-item-hover-color;
+    }
+  }
+
+  &:not(:nth-last-child(-n + 2)):hover {
+    background-color: $grey-bg;
+  }
+}
+
+.custom-grey-bg {
+  background-color: $grey-bg;
+  margin: 0;
+
+  & > button:hover {
+    color: $nav-item-hover-color;
+  }
+}
+
+.right-dir {
+  left: unset;
+  right: 0;
+}
